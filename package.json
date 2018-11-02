@@ -1,0 +1,26 @@
+{
+  "name": "bolumbiacns",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DiegosNore/BolumbiaCNS.git"
+  },
+  "author": "tomas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DiegosNore/BolumbiaCNS/issues"
+  },
+  "homepage": "https://github.com/DiegosNore/BolumbiaCNS#readme",
+  "dependencies": {
+    "mocha": "^5.2.0",
+    "mongoose": "^5.3.8"
+  }
+}
