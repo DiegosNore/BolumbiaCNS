@@ -15,6 +15,20 @@ router.get('/', (req, res, next) => {
   });
 });
 
+router.get('/find', (req, res, next) => {
+  Persona.findOne({nombre:"Tomas"}).exec().then(docs=>{
+    console.log(docs);
+    res.status(200).json(docs);
+  }).catch(err=>{
+    console.log(err);
+    res.status(500).json({
+      error:err
+    });
+  });
+});
+
+
+
 router.post('/', (req, res, next) => {
   res.status(201).json({
     message: 'Handling POST request to /censopersona'
@@ -67,15 +81,40 @@ router.post('/ingpersona', (req, res, next) => {
 
 });
 
-router.patch('/:personaid', (req, res, next) => {
-  res.status(200).json({
-    message: "updated"
+router.patch('/update', (req, res, next) => {
+  //const updateops ={};
+  //for(const ops of req.body){
+  //  updateops[ops.propName] = ops.value;
+  //}
+  /*Persona.update({documento:31880520},{$set:{updateops}}).exec()
+  .then(result=>{
+    console.log(result);
+    res.status(200).json(result);
+  }).catch(err=>{
+    console.log(err);
+    res.status(500).json({
+      error:err
+    });
+  });;*/
+  Persona.update({documento:31880520},{$set:{nombre:"Patricia",apellido:"Gomez"}}).exec().then(result=>{
+    console.log(result);
+    res.status(200).json(result);
+  }).catch(err=>{
+    console.log(err);
+    res.status(500).json({
+      error:err
+    });
   });
 });
 
-router.delete('/:personaid', (req, res, next) => {
-  res.status(200).json({
-    message: "deleted"
+router.delete('/delete', (req, res, next) => {
+  Persona.remove({documento:1040748666}).exec().then(result=>{
+    res.status(200).json(result).catch(err=>{
+      console.log(err);
+      res.status(500).json({
+        error:err
+      });
+    });
   });
 });
 
