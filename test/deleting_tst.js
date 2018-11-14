@@ -1,13 +1,13 @@
 const assert = require('assert');
-const censo = require('../models/censo');
+const persona = require('../models/personamodel');
 
 describe('Deleting records from the DB', function() {
   var per;
   beforeEach(function(done) {
-    per = new censo({
+      per = new persona({
       nombre: 'Mario',
       genero: 'Hombre',
-      direccion: 'cll 12 # 39-290'
+      hijos:{hombre:1,mujer:1}
     });
 
     per.save().then(function() {
@@ -16,10 +16,10 @@ describe('Deleting records from the DB', function() {
   });
 
   it('Deletes on record from the DB', function(done) {
-    censo.findOneAndRemove({
+    persona.findOneAndRemove({
       nombre: 'Mario'
     }).then(function() {
-      censo.findOne({
+      persona.findOne({
         nombre: 'Mario'
       }).then(function(result) {
         assert(result === null);

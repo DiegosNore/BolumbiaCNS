@@ -1,13 +1,13 @@
 const assert = require('assert');
-const censo = require('../models/censo');
+const persona = require('../models/personamodel');
 
 describe('Finding records', function() {
   var per;
   beforeEach(function(done){
-    per = new censo({
+      per = new persona({
       nombre: 'Mario',
       genero: 'Hombre',
-      direccion: 'cll 12 # 39-290'
+      hijos:{hombre:1,mujer:1}
     });
 
     per.save().then(function() {

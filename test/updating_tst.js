@@ -1,14 +1,13 @@
 const assert = require('assert');
-const censo = require('../models/censo');
+const persona = require('../models/personamodel');
 
 describe('Updating records in the DB', function() {
   var per;
   beforeEach(function(done) {
-    per = new censo({
+      per = new persona({
       nombre: 'Mario',
       genero: 'Hombre',
-      direccion: 'cll 12 # 39-290',
-      edad:10
+      hijos:{hombre:1,mujer:1}
     });
 
     per.save().then(function() {
@@ -17,26 +16,15 @@ describe('Updating records in the DB', function() {
   });
 
   it('Updates one record in the DB', function(done) {
-    censo.findOneAndUpdate({
+    persona.findOneAndUpdate({
       nombre: 'Mario'
     }, {
       nombre: 'Luigi'
     }).then(function() {
-      censo.findOne({
+      persona.findOne({
         _id: per._id
       }).then(function(result) {
         assert(result.nombre === 'Luigi');
-        done();
-      });
-    });
-  });
-
-  it('Increments the age by 1',function(done){
-    //Incrementa el peso en 1, el $inc es una funcion que se le pasa un objeto
-    //y la cantidad en la que quiere que se aunmente
-    persona.updateOne({},{$inc:{edad:1}}).then(function(){
-      persona.findOne({nombre:'Mario'}).then(function(record){
-        assert(record.edad===11);
         done();
       });
     });
