@@ -20,21 +20,23 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-app.use((req,res,next)=>{
+/*app.use((req,res,next)=>{
   res.header('Access-Control-Allow-Origin','*');
   res.header('Access-Control-Allow-headers','*');
   if(req.method === 'OPTIONS'){
     res.header('Access-Control-Allow-Methods','PUT,POST,PATCH,GET');
     return res.status(200).json({});
   }
-});
+});*/
 
 //rutas para los censos
 const censopersonaroutes = require('./routes/censopersona');
 const censovivienda = require('./routes/censovivienda');
+const login = require('./routes/login');
 
 app.use('/censopersona', censopersonaroutes);
-app.use('/vensovivienda', censovivienda);
+app.use('/censovivienda', censovivienda);
+app.use('/login', login);
 
 //handling errors
 app.use((req, res, next) => {
