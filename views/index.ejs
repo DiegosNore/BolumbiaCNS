@@ -3,9 +3,130 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="css/stylecss" rel="stylesheet">
   </head>
   <body>
+    <section class="poll-main poll-main-new">
+            <form action="app.js" name="Persona" method="post">
+                <table border="0">
+                    <tr>
+                      <td colspan="2">Registro de Personas</td>
+                    </tr>
+                    <tr>
+                      <td>Nombre*</td>
+                      <td><input type="text" name="nombre"></td>
+                    </tr>
+                    <tr>
+                      <td>Apellido*</td>
+                      <td><input type="text" name="apellido"></td>
+                    </tr>
+                    <tr>
+                      <td>Genero*</td>
+                      <td>
+                        <input type="radio" name="genero" value="m">Masculino
+                        <input type="radio" name="genero" value="f">Femenino
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Fecha de nacimiento*</td>
+                      <td><input type="date" name="fechanacimiento"></td>
+                    </tr>
+                    <tr>
+                      <td>Documento de identidad*</td>
+                      <td><input type="text" name="documento"></td>
+                    </tr>
+                    <tr>
+                      <td>Fecha de expedicón*</td>
+                      <td><input type="date" name="fechaexpediciondocumento"></td>
+                    </tr>
+                    <tr>
+                      <td>Lugar de expedición*</td>
+                      <td><input type="text" name="lugarexpedicion"></td>
+                    </tr>
+                    <tr>
+                      <td>Nivel de educación*</td>
+                      <td><input type="text" name="niveleducativo"></td>
+                    </tr>
+                    <tr>
+                      <td>Estado civil*</td>
+                      <td>
+                        <select>
+                          <option value="1">Soltero/a</option>
+                          <option value="2">Casado/a</option>
+                          <option value="3">Unión libre</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Profesión*</td>
+                      <td><input type="text" name="profesion"></td>
+                    </tr>
+                    <tr>
+                      <td>Grupo etnico*</td>
+                      <td><input type="text" name="grupoetnico"></td>
+                    </tr>
+                    <tr>
+                      <td>Religión*</td>
+                      <td><input type="text" name="religion"></td>
+                    </tr>
+                    <tr>
+                      <td>Sector de trabajo*</td>
+                      <td><input type="text" name="sectortrabajo"></td>
+                    </tr>
+                    <tr>
+                      <td>Horas trabajadas semanalmente*</td>
+                      <td><input type="text" name="horastrabajadassemanales"></td>
+                    </tr>
+                    <tr>
+                      <td>Valor de salario*</td>
+                      <td><input type="text" name="salariomensual"></td>
+                    </tr>
+                    <tr>
+                      <td>Número de celular*</td>
+                      <td><input type="text" name="celular"></td>
+                    </tr>
+                    <tr>
+                      <td>Pais de nacimiento</td>
+                      <td><input type="text" name="paisnacimiento"></td>
+                    </tr>
+                    <tr>
+                      <td>Departamento de nacimiento</td>
+                      <td><input type="text" name="departamentonacimiento"></td>
+                    </tr>
+                    <tr>
+                      <td>Ciudad de nacimiento*</td>
+                      <td><input type="text" name="ciudadnacimiento"></td>
+                    </tr>
+                    <tr>
+                      <td>Número de Sisben*</td>
+                      <td><input type="text" name="sisben"></td>
+                    </tr>
+                    <tr>
+                      <td>EPS*</td>
+                      <td><input type="text" name="eps"></td>
+                    </tr>
+                    <tr>
+                      <td>¿Tiene alguna discapacidad?*</td>
+                      <td>
+                        <input type="checkbox" name="discapacidad" value="1">No<br>
+                        <input type="checkbox" name="discapacidad" value="2">si<br>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>¿Cuánto tiempo lleva en su casa actual?</td>
+                      <td><input type="text" name="tiempovividoensuactualcasa"></td>
+                    </tr>
+                    <tr>
+                      <td>Número de hijos</td>
+                      <td><input type="number" name="hijos"></td>
+                    </tr>
 
+                </table>
+                <input type="button" value="Guardar">
+                <input type="button" value="Actualizar">
+                <input type="button" value="Limpiar">
+            </form>
+            <a href="#" class="exit-button">Salir</a>
+        </section>
   </body>
 </html>
