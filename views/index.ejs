@@ -3,7 +3,23 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link href="css/stylecss" rel="stylesheet">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <script>
+    function save(){
+      localStorage.setItem("nombre", document.getElementById("nombre").value);
+      localStorage.setItem("apellido", document.getElementById("apellido").value);
+    }
+    function update(){
+
+    }
+    function clean() {
+
+    }
+    </script>
   </head>
   <body>
     <section class="poll-main poll-main-new">
@@ -122,11 +138,13 @@
                     </tr>
 
                 </table>
-                <input type="button" value="Guardar">
-                <input type="button" value="Actualizar">
-                <input type="button" value="Limpiar">
+                <input type="button" value="Guardar" onclick="save">
+                <input type="button" value="Actualizar" onclick="update">
+                <input type="button" value="Limpiar" onclick="clean">
             </form>
             <a href="#" class="exit-button">Salir</a>
         </section>
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>
 </html>
