@@ -62,7 +62,20 @@ router.post('/ingpersona',checkAuth, (req, res, next) => {
     eps: req.body.eps,
     discapacidad: req.body.discapacidad,
     tiempovividoensuactualcasa: req.body.tiempovividoensuactualcasa,
-    hijos: req.body.hijos
+    hijos: req.body.hijos,
+    direccion:req.body.direccion,
+    materialparedes:req.body.materialparedes,
+    materialpiso:req.body.materialpiso,
+    tipovivienda:req.body.tipovivienda,
+    propiaalquilada:req.body.propiaalquilada,
+    numerohabitaciones:req.body.numerohabitaciones,
+    numerobaños:req.body.numerobaños,
+    numerohabitantes:req.body.numerohabitantes,
+    estrato:req.body.estrato,
+    barrio:req.body.barrio,
+    valorarriendoadminstracion:req.body.valorarriendoadminstracion,
+    servicios:req.body.servicios,
+    npersonasaporteeconomico:req.body.npersonasaporteeconomico
   });
 
   pers.save().then(result => {

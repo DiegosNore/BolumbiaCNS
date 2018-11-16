@@ -32,12 +32,10 @@ app.use(bodyParser.json());
 
 //rutas para los censos
 const censopersonaroutes = require('./routes/censopersona');
-const censovivienda = require('./routes/censovivienda');
 const userRoutes = require('./routes/login');
 
 
 app.use('/censopersona', censopersonaroutes);
-app.use('/censovivienda', censovivienda);
 app.use('/user', userRoutes);
 
 //handling errors
@@ -46,6 +44,7 @@ app.use((req, res, next) => {
   error.status = 404;
   next(error);
 });
+
 
 app.use((err, req, res, next) => {
   res.status(err.status || 500);
