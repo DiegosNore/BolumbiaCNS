@@ -27,7 +27,20 @@ const personaSchema = new Schema({
   eps: String,
   discapacidad: String,
   tiempovividoensuactualcasa: Number,
-  hijos: Number
+  hijos: Number,
+  direccion: String,
+  materialparedes: String,
+  materialpiso: String,
+  tipovivienda: String,
+  propiaalquilada: String,
+  numerohabitaciones: Number,
+  numerobaños: Number,
+  numerohabitantes: String,
+  estrato: Number,
+  barrio: String,
+  valorarriendoadminstracion: Number,
+  servicios: [String],
+  npersonasaporteeconomico: Number
 
 });
 
