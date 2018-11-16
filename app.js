@@ -8,10 +8,11 @@ const bodyParser = require('body-parser');
 const app = express();
 
 
-var url = "mongodb+srv://admin:admin@cluster0-ty3lw.mongodb.net/test?retryWrites=true"
+var url = "mongodb+srv://admin:admin@cluster0-ty3lw.mongodb.net/bolumbiacns?retryWrites=true"
 
 mongoose.connect(url, {
   //useMongoClient: true
+  useNewUrlParser:true
 });
 
 app.use(morgan('dev'));
@@ -32,11 +33,12 @@ app.use(bodyParser.json());
 //rutas para los censos
 const censopersonaroutes = require('./routes/censopersona');
 const censovivienda = require('./routes/censovivienda');
-const login = require('./routes/login');
+const userRoutes = require('./routes/login');
+
 
 app.use('/censopersona', censopersonaroutes);
 app.use('/censovivienda', censovivienda);
-app.use('/login', login);
+app.use('/user', userRoutes);
 
 //handling errors
 app.use((req, res, next) => {
