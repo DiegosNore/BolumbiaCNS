@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
+const checkAuth = require('../middleware/check-auth');
 const Persona = require('../models/personaschema');
 const mongoose = require('mongoose');
 
@@ -35,7 +35,7 @@ router.post('/', (req, res, next) => {
   });
 });
 
-router.post('/ingpersona', (req, res, next) => {
+router.post('/ingpersona',checkAuth, (req, res, next) => {
   const pers = new Persona({
     nombre: req.body.nombre,
     apellido: req.body.apellido,
